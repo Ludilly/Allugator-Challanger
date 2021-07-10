@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/Ludilly/Allugator-Challanger/issues"
   },
-  "homepage": "https://github.com/Ludilly/Allugator-Challanger#readme"
+  "homepage": "https://github.com/Ludilly/Allugator-Challanger#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-plugin-sonarjs": "^0.9.1",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "eslint-config-trybe-backend": "^1.0.3",
+    "express": "^4.17.1"
+  }
 }
