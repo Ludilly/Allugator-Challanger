@@ -1,5 +1,4 @@
 const fs = require('fs');
-// const axios = require('axios');
 
 const dbEmplyees = './employees.json';
 
@@ -11,5 +10,5 @@ const getFsEmployess = () => new Promise((resolve, reject) => {
     resolve(JSON.parse(data));
   });
 });
-
+// getFsEmployess().then((r) => console.log(r));
 module.exports = getFsEmployess;
