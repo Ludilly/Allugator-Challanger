@@ -6,6 +6,9 @@ import Button from '../components/Button';
 const Forms = () => (
   // const [data, setData] = useState([]);
   <fieldset>
+    <Input label="Nome:" />
+    <Input label="Cpf:" />
+    <Input label="Data:" />
     <Input label="Salário - Min" />
     <Input label="Salário - Max" />
     <Select />

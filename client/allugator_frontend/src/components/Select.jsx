@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Select = ({ label,
-  name, 
-  onChange, 
-  value, 
-  id, 
+  name,
+  onChange,
+  value,
+  id,
   defaultOption,
-  defaultValue, 
-  options 
+  defaultValue,
+  options,
 }) => (
   <label htmlFor={ name }>
     { label }
