@@ -4,8 +4,9 @@ const setData = require('../model/fsWrite');
 
 const getEmployeeByName = async (req, res) => {
   try {
-    const { Nome } = req.body;
-    const result = await service.getEmployeeByName(Nome);
+    const { nome } = req.params;
+    console.log(nome);
+    const result = await service.getEmployeeByName(nome);
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
@@ -16,8 +17,8 @@ const getEmployeeByName = async (req, res) => {
 
 const getEmployeeByCpf = async (req, res) => {
   try {
-    const { Cpf } = req.body;
-    const result = await service.getEmployeeByCpf(Cpf);
+    const { cpf } = req.params;
+    const result = await service.getEmployeeByCpf(cpf);
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
@@ -28,8 +29,8 @@ const getEmployeeByCpf = async (req, res) => {
 
 const getEmployeeByRole = async (req, res) => {
   try {
-    const { Cargo } = req.body;
-    const result = await service.getEmployeeByRole(Cargo);
+    const { role } = req.params;
+    const result = await service.getEmployeeByRole(role);
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
@@ -40,8 +41,8 @@ const getEmployeeByRole = async (req, res) => {
 
 const getEmployeeByDate = async (req, res) => {
   try {
-    const { DataCad } = req.body;
-    const result = await service.getEmployeeByDate(DataCad);
+    const { date } = req.params;
+    const result = await service.getEmployeeByDate(date);
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
@@ -52,9 +53,9 @@ const getEmployeeByDate = async (req, res) => {
 
 const getEmployeeByUf = async (req, res) => {
   try {
-    const { UfNasc } = req.body;
-    const result = await service.getEmployeeByUf(UfNasc);
-    res.status(200).json({ UF: UfNasc, quantityUf: result.length });
+    const { uf } = req.params;
+    const result = await service.getEmployeeByUf(uf);
+    res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
       error: e.message,
@@ -64,8 +65,8 @@ const getEmployeeByUf = async (req, res) => {
 
 const getEmployeeBySalary = async (req, res) => {
   try {
-    const { min, max } = req.body;
-    const result = await service.getEmployeeBySalary(min, max);
+    const { range } = req.params;
+    const result = await service.getEmployeeBySalary(range);
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
@@ -76,8 +77,8 @@ const getEmployeeBySalary = async (req, res) => {
 
 const getEmployeeByStatus = async (req, res) => {
   try {
-    const { Status } = req.body;
-    const result = await service.getEmployeeByStatus(Status);
+    const { status } = req.params;
+    const result = await service.getEmployeeByStatus(status);
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({

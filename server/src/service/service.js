@@ -26,7 +26,9 @@ const getEmployeeByRole = async (role) => {
 const getEmployeeByDate = async (date) => {
   const allEmployees = await data();
   if (!date) throw new Error('Data não encontrada');
-  const employeesDate = allEmployees.filter((employee) => employee.DataCad === date);
+  const employeesDate = allEmployees.filter(
+    (employee) => employee.DataCad === date.replace(/-/g, '/'),
+  );
   return employeesDate;
 };
 
@@ -37,30 +39,34 @@ const getEmployeeByUf = async (uf) => {
   return employeesUf;
 };
 
-const getEmployeeBySalary = async (min, max) => {
+const getEmployeeBySalary = async (range) => {
   const allEmployees = await data();
-  if (typeof min !== 'number' || typeof max !== 'number') throw new Error('Valor inválido');
+  const [min, max] = range.split(' ');
+  if (Number.isNaN(parseFloat(min)) || Number.isNaN(parseFloat(max))) { 
+    throw new Error('Valor inválido'); 
+}
   const employeesSalary = allEmployees.filter(
-    (employee) => (employee.Salario >= min && employee.Salario <= max),
+    (employee) => (employee.Salario >= parseFloat(min) && employee.Salario <= parseFloat(max)),
   );
   return employeesSalary;
 };
 
 const getEmployeeByStatus = async (status) => {
+  console.log(status);
   const allEmployees = await data();
   if (!status) throw new Error('Status não encontrado');
-  const employeesStats = allEmployees.filter((employee) => employee.UfNasc === status);
+  const employeesStats = allEmployees.filter((employee) => employee.Status === status);
   return employeesStats;
 };
 
-const newUser = (e) => ({
-  DataCad: e.DataCad,
-  Cargo: e.Cargo,
-  Cpf: e.Cpf,
-  Nome: e.Nome,
-  UfNasc: e.UfNasc,
-  Salario: e.Salario,
-  Status: e.Status,
+const newUser = (user) => ({
+  DataCad: user.DataCad,
+  Cargo: user.Cargo,
+  Cpf: user.Cpf,
+  Nome: user.Nome,
+  UfNasc: user.UfNasc,
+  Salario: user.Salario,
+  Status: user.Status,
 });
 
 const deleteEmployee = async (cpf) => {

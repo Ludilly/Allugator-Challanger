@@ -6,9 +6,8 @@ const Select = ({ label,
   onChange,
   value,
   id,
-  defaultOption,
-  defaultValue,
   options,
+  values,
 }) => (
   <label htmlFor={ name }>
     { label }
@@ -19,10 +18,9 @@ const Select = ({ label,
       onChange={ onChange }
       value={ value }
     >
-      <option value={ defaultValue }>{ defaultOption }</option>
       {
         options.map((option, index) => (
-          <option key={ index }>{ option }</option>
+          <option key={ index } value={ values[index] }>{ option }</option>
         ))
       }
     </select>
@@ -33,11 +31,10 @@ Select.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  values: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.func.isRequired,
-  defaultValue: PropTypes.func.isRequired,
-  defaultOption: PropTypes.func.isRequired,
 };
 
 export default Select;
