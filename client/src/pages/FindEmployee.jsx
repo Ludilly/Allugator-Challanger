@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setApiData } from '../Redux/actions/actions';
+
 import Input from '../components/Input';
 import Select from '../components/Select';
 import Button from '../components/Button';
@@ -10,13 +13,13 @@ const Forms = () => {
   const arrayOfRoutes = ['name', 'cpf', 'role', 'uf', 'status', 'date', 'salary'];
   const [option, setOptions] = useState('');
   const [inputValue, setinputValue] = useState('');
+  const dispatch = useDispatch();
 
   const fetchApi = async () => {
-    console.log(option);
     const endpoint = `http://localhost:3001/${option}/${inputValue}`;
     const results = await fetch(endpoint);
     const data = await results.json();
-    console.log(data);
+    dispatch(setApiData(data));
   };
 
   return (
@@ -25,7 +28,7 @@ const Forms = () => {
         <Select
           label="Escolha uma opção:"
           options={ arryOfOptions }
-          onChange={ (e) => setOptions(e.target.value) }
+          onChange={ (event) => setOptions(event.target.value) }
           values={ arrayOfRoutes }
         />
         <Input
@@ -36,7 +39,9 @@ const Forms = () => {
 
         <Button
           label="Filtrar"
-          onClick={ () => fetchApi() }
+          onClick={ () => {
+            fetchApi();
+          } }
         />
       </fieldset>
       <Table />
