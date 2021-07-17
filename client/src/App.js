@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Forms from './pages/FindEmployee';
+import Delete from './pages/DeleteEmployee';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={ Forms } />
+          <Route exact path="/delete" component={ Delete } />
         </Switch>
       </BrowserRouter>
     </div>

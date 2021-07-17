@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setApiData } from '../Redux/actions/actions';
 
 import Input from '../components/Input';
@@ -9,14 +10,21 @@ import Table from '../components/Table';
 
 const Forms = () => {
   const arryOfOptions = [
-    'Nome', 'Cpf', 'Cargo', 'UfNasc', 'Status', 'DataCad', 'Salário'];
+    'Nome',
+    'Cpf',
+    'Cargo',
+    'UfNasc',
+    'Status',
+    'DataCad',
+    'Salário',
+  ];
   const arrayOfRoutes = ['name', 'cpf', 'role', 'uf', 'status', 'date', 'salary'];
-  const [option, setOptions] = useState('');
+  const [option, setOptions] = useState('name');
   const [inputValue, setinputValue] = useState('');
   const dispatch = useDispatch();
 
   const fetchApi = async () => {
-    const endpoint = `http://localhost:3001/${option}/${inputValue}`;
+    const endpoint = `http://localhost:3001/employees/${option}/${inputValue}`;
     const results = await fetch(endpoint);
     const data = await results.json();
     dispatch(setApiData(data));
@@ -24,6 +32,7 @@ const Forms = () => {
 
   return (
     <>
+      <Link to="/delete">Delete Employee</Link>
       <fieldset>
         <Select
           label="Escolha uma opção:"

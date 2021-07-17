@@ -1,4 +1,5 @@
 export const SET_API_DATA = 'SET_API_DATA';
+export const DELETE_EMPLOYEE = 'DELETE_EMPLOYEE';
 
 export const setApiData = (payload) => (
   {
@@ -6,3 +7,10 @@ export const setApiData = (payload) => (
     payload,
   }
 );
+
+export const deleteUserSuccess = (cpf) => ({
+  type: DELETE_EMPLOYEE,
+  payload: {
+    cpf,
+  },
+});

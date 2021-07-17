@@ -1,5 +1,6 @@
 import {
   SET_API_DATA,
+  DELETE_EMPLOYEE,
 } from '../actions/actions';
 
 const initialState = {
@@ -12,6 +13,11 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       employees: action.payload,
+    };
+  case DELETE_EMPLOYEE:
+    return {
+      ...state,
+      employees: state.filter((employee) => employee.Cpf !== action.payload.cpf),
     };
   default: return state;
   }
