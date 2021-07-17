@@ -8,9 +8,9 @@ export const setApiData = (payload) => (
   }
 );
 
-export const deleteUserSuccess = (cpf) => ({
-  type: DELETE_EMPLOYEE,
-  payload: {
-    cpf,
-  },
-});
+export const deleteUserSuccess = (cpf) => (
+  {
+    type: DELETE_EMPLOYEE,
+    payload: cpf,
+  }
+);

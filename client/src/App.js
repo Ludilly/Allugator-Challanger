@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Forms from './pages/FindEmployee';
+import Create from './pages/CreateEmployee';
 import Delete from './pages/DeleteEmployee';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={ Forms } />
+          <Route exact path="/create" component={ Create } />
           <Route exact path="/delete" component={ Delete } />
         </Switch>
       </BrowserRouter>

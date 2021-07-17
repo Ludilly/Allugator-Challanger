@@ -17,7 +17,9 @@ const reducer = (state = initialState, action) => {
   case DELETE_EMPLOYEE:
     return {
       ...state,
-      employees: state.filter((employee) => employee.Cpf !== action.payload.cpf),
+      employees: state.employees.filter(
+        (employee) => Number(employee.Cpf) !== Number(action.payload),
+      ),
     };
   default: return state;
   }

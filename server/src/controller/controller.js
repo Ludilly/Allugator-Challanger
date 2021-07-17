@@ -86,6 +86,7 @@ const getEmployeeByStatus = async (req, res) => {
 
 const createEmployee = async (req, res) => {
     try {
+      console.log(req.body);
       const result = await service.createEmployee(req.body);
       res.status(200).json(result);
     } catch (e) {

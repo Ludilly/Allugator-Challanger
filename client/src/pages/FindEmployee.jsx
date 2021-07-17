@@ -32,6 +32,7 @@ const Forms = () => {
 
   return (
     <>
+      <Link to="/create">Create Employee</Link>
       <Link to="/delete">Delete Employee</Link>
       <fieldset>
         <Select
@@ -48,9 +49,7 @@ const Forms = () => {
 
         <Button
           label="Filtrar"
-          onClick={ () => {
-            fetchApi();
-          } }
+          onClick={ fetchApi }
         />
       </fieldset>
       <Table />

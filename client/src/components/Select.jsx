@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 const Select = ({ label,
   name,
   onChange,
-  value,
-  id,
   options,
   values,
 }) => (
@@ -13,10 +11,8 @@ const Select = ({ label,
     { label }
     <select
       name={ name }
-      id={ id }
       required
       onChange={ onChange }
-      value={ value }
     >
       {
         options.map((option, index) => (
@@ -29,12 +25,14 @@ const Select = ({ label,
 
 Select.propTypes = {
   label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  values: PropTypes.string.isRequired,
+  values: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  options: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.string,
+  ).isRequired,
 };
 
 export default Select;

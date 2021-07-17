@@ -43,7 +43,7 @@ const getEmployeeBySalary = async (range) => {
   const [min, max] = range.split(' ');
   if (Number.isNaN(parseFloat(min)) || Number.isNaN(parseFloat(max))) { 
     throw new Error('Valor inválido'); 
-}
+  }
   const employeesSalary = allEmployees.filter(
     (employee) => (employee.Salario >= parseFloat(min) && employee.Salario <= parseFloat(max)),
   );
@@ -58,15 +58,6 @@ const getEmployeeByStatus = async (status) => {
 };
 
 const createEmployee = async (newUser) => employeeModel.create(newUser);
-// const newUser = (user) => ({
-//   DataCad: user.DataCad,
-//   Cargo: user.Cargo,
-//   Cpf: user.Cpf,
-//   Nome: user.Nome,
-//   UfNasc: user.UfNasc,
-//   Salario: user.Salario,
-//   Status: user.Status,
-// });
 
 const deleteEmployee = async (cpf) => employeeModel.deleteByCpf(cpf);
 
