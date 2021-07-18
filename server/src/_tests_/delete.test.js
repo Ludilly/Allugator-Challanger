@@ -36,10 +36,5 @@ describe('Cria um endpoint DELETE', () => {
         ),
 );
     });
-  //   .delete(`${baseUrl}/55555555555`)
-  //   .expect('status', 200)
-  //   .then(({ json }) => {
-  //     expect(json).not.toEqual({ Cpf: 55555555555, ...employee });
-  // });
 });
 });

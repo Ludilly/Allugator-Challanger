@@ -15,7 +15,6 @@ const getEmployeeByName = async (req, res) => {
 const getEmployeeByCpf = async (req, res) => {
   try {
     const { cpf } = req.params;
-    console.log(cpf);
     const result = await service.getEmployeeByCpf(Number(cpf));
     res.status(200).json(result);
   } catch (e) {

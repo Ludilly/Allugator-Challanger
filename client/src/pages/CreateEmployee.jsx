@@ -29,8 +29,7 @@ const Create = () => {
       Salario: salario,
 
     }) });
-    const result = await response.json();
-    console.log(result);
+    await response.json();
   };
 
   return (
