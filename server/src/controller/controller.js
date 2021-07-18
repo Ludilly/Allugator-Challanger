@@ -15,7 +15,8 @@ const getEmployeeByName = async (req, res) => {
 const getEmployeeByCpf = async (req, res) => {
   try {
     const { cpf } = req.params;
-    const result = await service.getEmployeeByCpf(cpf);
+    console.log(cpf);
+    const result = await service.getEmployeeByCpf(Number(cpf));
     res.status(200).json(result);
   } catch (e) {
     res.status(404).json({
@@ -85,15 +86,14 @@ const getEmployeeByStatus = async (req, res) => {
 };
 
 const createEmployee = async (req, res) => {
-    try {
-      console.log(req.body);
-      const result = await service.createEmployee(req.body);
-      res.status(200).json(result);
-    } catch (e) {
-      res.status(404).json({
-        error: e.message,
-      });
-    }
+  try {
+    const result = await service.createEmployee(req.body);
+    res.status(200).json(result);
+  } catch (e) {
+    res.status(404).json({
+      error: e.message,
+    });
+  }
 };
 
 const deletedEmployees = async (req, res) => {

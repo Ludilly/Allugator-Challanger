@@ -4948,15 +4948,5 @@
     "UfNasc": "MG",
     "Salario": 3000,
     "Status": "ATIVO"
-  },
-  {
-    "id": 506,
-    "DataCad": "18/02/2015",
-    "Cargo": "Dev Jr",
-    "Cpf": 11122233344,
-    "Nome": "Jane Doe",
-    "UfNasc": "AC",
-    "Salario": 4000,
-    "Status": "ATIVO"
   }
 ]

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 const Table = () => {
   const employee = useSelector((state) => state.reducer.employees);
-  console.log(employee);
   return (
     <table>
       <thead>

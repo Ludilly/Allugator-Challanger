@@ -41,6 +41,7 @@ const getEmployeeByUf = async (uf) => {
 const getEmployeeBySalary = async (range) => {
   const allEmployees = await employeeModel.findAll();
   const [min, max] = range.split(' ');
+  console.log(min, max);
   if (Number.isNaN(parseFloat(min)) || Number.isNaN(parseFloat(max))) { 
     throw new Error('Valor inválido'); 
   }
