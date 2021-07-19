@@ -44,3 +44,4 @@ Acredito que eu poderia melhorar essas aplicações e, abaixo, cito alguns ponto
  - Criar testes para as validações
  - Criar um hook customizado para a requisição da API
  - Maior utilização do RTL
+ - Documentação da API através do Swagger
