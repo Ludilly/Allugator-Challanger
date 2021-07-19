@@ -15,7 +15,7 @@ onde o Frontend foi construído e testado.
 O Frontend foi construído em React, utilizando componente funcional, Redux e testado através do RTL. Existe uma pasta "pages", contendo as páginas utilizadas
 e outra "componenets", pois todo projeto foi componenetizado. Além disso, o react-router-dom foi utilizado nesse projeto. 
 
-Já o Backend foi feito em Node. O banco de dados foi convertido em JSON e as funções de readFile e writeFile foram utilizadas na criação do CRUD. Os testes foram criados
+Já o Backend foi feito em Node, com MSC. O banco de dados foi convertido em JSON e as funções de readFile e writeFile foram utilizadas na criação do CRUD. Os testes foram criados
 utilizando o `frisby`. Além disso, é importante ressaltar que a porta utilizada foi a 3001, no intuito de evitar conflitos com o Frontend.
 
 É importante enfatizar que nesse projeto o ESlint foi utilizado tanto na pasta "Server" quanto na "Client".
@@ -45,3 +45,4 @@ Acredito que eu poderia melhorar essas aplicações e, abaixo, cito alguns ponto
  - Criar um hook customizado para a requisição da API
  - Maior utilização do RTL
  - Documentação da API através do Swagger
+ - Estilização da aplicação
