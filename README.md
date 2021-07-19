@@ -12,10 +12,13 @@ O principal objetivo desse projeto foi fazer uma CRUD através de um banco de da
 Para isto, foi criado um repositório chamado "Server", onde todas as informações do Backend estão armazenadas e com testes implementados e outra pasta chamada "Client",
 onde o Frontend foi construído e testado.
 
-O Frontend foi construído em React, utilizando componente funcional, Redux e testado através do RTL.
+O Frontend foi construído em React, utilizando componente funcional, Redux e testado através do RTL. Existe uma pasta "pages", contendo as páginas utilizadas
+e outra "componenets", pois todo projeto foi componenetizado. Além disso, o react-router-dom foi utilizado nesse projeto. 
 
 Já o Backend foi feito em Node. O banco de dados foi convertido em JSON e as funções de readFile e writeFile foram utilizadas na criação do CRUD. Os testes foram criados
 utilizando o `frisby`. Além disso, é importante ressaltar que a porta utilizada foi a 3001, no intuito de evitar conflitos com o Frontend.
+
+É importante enfatizar que nesse projeto o ESlint foi utilizado tanto na pasta "Server" quanto na "Client".
 
 ---
 
