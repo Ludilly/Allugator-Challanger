@@ -26,7 +26,7 @@ const Select = ({ label,
 Select.propTypes = {
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
-    PropTypes.object,
+    PropTypes.string,
   ).isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,

@@ -40,6 +40,7 @@ const Forms = () => {
           options={ arryOfOptions }
           onChange={ (event) => setOptions(event.target.value) }
           values={ arrayOfRoutes }
+          name="Escolha uma opção:"
         />
         <Input
           label="Digite a sua busca:"
